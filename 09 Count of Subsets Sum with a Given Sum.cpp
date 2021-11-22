@@ -57,6 +57,9 @@ int main(){
 }
 
 
+// Note:- when sm = 0
+//        when n = 0 and sm = 0
+
 /*
 def fun(val, wt, n, w):
     if n == 0 or w == 0:
