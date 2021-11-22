@@ -2,6 +2,7 @@
 using namespace std;
 
 int fun(vector<int> val, vector<int> w, int n, int wt){
+    // no. of available items are zero or current capacity of bag is zero
     if(n==0 || wt == 0){
         return 0;
     }
