@@ -42,7 +42,7 @@ int fun(int arr[], int n, int range){
     int mn = pow(10, 9) + 7;
     for(int j = 0; j < range/2 + 1; j++){
         if(dp[n][j] == 1){
-            int sm = range - 2*j;
+            int sm = range - 2*j;   # (range - j) - j
             if(sm < mn){
                 mn = sm;
             }
