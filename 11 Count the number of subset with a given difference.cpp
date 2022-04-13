@@ -58,3 +58,11 @@ int main(){
     int find = (1+sm)/2;
     cout<<fun(arr, n, find);
 }
+
+
+/*
+=> sum1-sum2=diff
+=> sum1-(sum-sum1)=diff
+=> 2*sum1= diff+ sum
+=> sum1= (diff+sum)/2;
+*/
