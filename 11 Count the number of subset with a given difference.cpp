@@ -55,7 +55,9 @@ int main(){
         sm += arr[i];
     }
     
-    int find = (1+sm)/2;
+    int diff = 1;
+    
+    int find = (diff + sm)/2;
     cout<<fun(arr, n, find);
 }
 
