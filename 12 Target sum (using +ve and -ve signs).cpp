@@ -5,15 +5,14 @@ using namespace std;
 int fun(int *arr, int n, int sm){
     int dp[n+1][sm+1];
     memset(dp, 0, sizeof(dp));
-    
-    dp[0][0] = 1;
+        
+    for(int i = 0; i < n+1; i++){
+        dp[i][0] = 1;
+    }
     
     for(int i = 1; i < n+1; i++){
-        for(int j = 0; j < sm+1; j++){
-            if(j==0){
-                dp[i][j] = 1;
-            }
-            else if(arr[i-1] > sm){
+        for(int j = 1; j < sm+1; j++){
+            if(arr[i-1] > sm){
                 dp[i][j] = dp[i-1][j];
             }
             else{
