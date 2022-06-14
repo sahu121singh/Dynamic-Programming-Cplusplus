@@ -5,15 +5,13 @@ using namespace std;
 int fun(int *coins, int n, int sm){
     int dp[n+1][sm+1];
     memset(dp, 0, sizeof(dp));
-    
-    dp[0][0] = 1;
+        
+    for(int i = 0; i < n+1; i++){
+        dp[i][0] = 1;
+    }
     
     for(int i = 1; i < n+1; i++){
         for(int j = 0; j < sm+1; j++){
-            if(j == 0){
-                dp[i][j] = 1;
-                continue;
-            }
             if(coins[i-1] > j){
                 dp[i][j] = dp[i-1][j];
             }
