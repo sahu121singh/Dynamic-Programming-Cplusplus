@@ -5,11 +5,8 @@ int fun(string A, string B, int N, int M){
     int dp[N+1][M+1];
     memset(dp, 0, sizeof(dp));
     
-    for(int i = 0; i < N+1; i++){
-        for(int j = 0; j < M+1; j++){
-            if(i==0 or j == 0){
-                continue;
-            }
+    for(int i = 1; i < N+1; i++){
+        for(int j = 1; j < M+1; j++){
             if(A[i-1] == B[j-1]){
                 dp[i][j] = 1 + dp[i-1][j-1];
             }
