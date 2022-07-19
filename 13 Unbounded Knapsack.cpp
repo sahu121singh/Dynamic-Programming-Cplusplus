@@ -46,12 +46,11 @@ int fun2(int *val, int *wt, int n, int w){
     }
     if(wt[n-1] > w){
         memo[n][w] = fun2(val, wt, n-1, w);
-        return memo[n][w];
     }
     else{
         memo[n][w] = max(val[n-1] + fun2(val, wt, n, w-wt[n-1]), fun2(val, wt, n-1, w));
-        return memo[n][w];
     }
+    return memo[n][w];
 }
 
 
