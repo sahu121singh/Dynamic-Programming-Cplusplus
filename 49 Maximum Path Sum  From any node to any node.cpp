@@ -13,6 +13,12 @@ struct Node *create(int data){
     temp ->right = NULL;
 }
 
+// For each node there can be four ways that the max path goes through the node: 
+// 1. Node only 
+// 2. Max path through Left Child + Node 
+// 3. Max path through Right Child + Node 
+// 4. Max path through Left Child + Node + Max path through Right Child
+
 int fun(struct Node *root, int &res){
     if(root == NULL){
         return 0;
@@ -20,8 +26,12 @@ int fun(struct Node *root, int &res){
     int l = fun(root->left, res);
     int r = fun(root->right, res);
     
+    // max(max(step 2, step 3), step 1)
     int temp = max(max(l, r) + root-> val, root->val);
+    
+    // max(step 4, temp)
     int ans = max(l+r+root->val, temp);
+    
     res = max(ans, res);
     return temp;
 }
